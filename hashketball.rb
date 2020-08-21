@@ -1,4 +1,4 @@
-# Write your code below game_hash
+require 'pry'# Write your code below game_hash
 def game_hash
   {
     home: {
@@ -125,5 +125,85 @@ def game_hash
     }
   }
 end
-
-# Write code here
+def num_points_scored (player_name)
+  points = []
+  game_hash.each do |team, data|
+    data[:players].each do |stats|
+      if stats[:player_name] == player_name
+        points<< stats[:points]
+      end
+    end
+  end
+  points[0]
+end
+  def shoe_size(player_name)
+    shoe_size= 0
+    game_hash.each do|team,data|
+     data[:players].each do |stats| 
+       if stats[:player_name]== player_name
+    shoe_size = stats[:shoe]
+      end
+    end
+ end
+shoe_size
+end 
+def team_colors(team_name)
+  colors=[]
+  game_hash.each do |team,data|
+    if data[:team_name]=="Brooklyn Nets"
+    colors = data[:colors]  
+  end
+end  
+colors.to_a
+end 
+      
+   def team_colors(team_name)
+  colors2=[]
+  game_hash.each do |team,data|
+    if data[:team_name]==team_name
+    colors2 = data[:colors]  
+  end
+end  
+colors2.to_a   
+  end 
+  def team_names
+    game_hash.map do |key,value|
+      value[:team_name]
+    end
+  end 
+    def player_numbers(team_name)
+      jersey_number=[]
+      game_hash.each do |key,value|
+        if value[:team_name]==team_name
+         value[:players]. each do |player|
+          jersey_number << player[:number]
+          end 
+          end
+        end 
+        jersey_number
+        end
+ def player_stats(player_name)
+   player_stats={}
+   game_hash.each do |team,data|
+     data[:players].each do |stats|
+       if stats[:player_name]==player_name
+         player_stats = stats
+       end 
+       end
+     end
+     player_stats
+   end 
+   def big_shoe_rebounds
+      biggest_shoe=0
+      biggest_rebounds = 0 
+      game_hash.each do |team,data|
+        data[:players].each do |stats|
+          if stats[:shoe] > biggest_shoe
+        biggest_shoe = stats[:shoe]
+        biggest_rebounds = stats[:rebounds]
+       end
+       end
+     end 
+     biggest_rebounds
+    end 
+      # Write code here
