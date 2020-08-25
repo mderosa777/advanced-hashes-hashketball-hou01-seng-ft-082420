@@ -195,15 +195,27 @@ colors2.to_a
    end 
    def big_shoe_rebounds
       biggest_shoe=0
+<<<<<<< HEAD
       biggest_rebounds = 0 
+=======
+      biggest_rebound = 0 
+>>>>>>> 7c2c46df0fbb1dbcac25063b68eedadcf985ecf6
       game_hash.each do |team,data|
         data[:players].each do |stats|
           if stats[:shoe] > biggest_shoe
         biggest_shoe = stats[:shoe]
+<<<<<<< HEAD
         biggest_rebounds = stats[:rebounds]
        end
        end
      end 
      biggest_rebounds
+=======
+        biggest_rebound = stats[:rebounds]
+       end
+       end
+     end 
+     big_shoe_rebounds
+>>>>>>> 7c2c46df0fbb1dbcac25063b68eedadcf985ecf6
     end 
       # Write code here
